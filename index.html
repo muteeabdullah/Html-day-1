@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+    <div class="toolbar">
+        <button id="btn">Button</button>
+        <h1 class="tollbar">toolbar</h1>
+    </div>
+    <form>
+        <label for="uplaod">Upload your Images here</label>
+        <input type="file" id="input" name="upload" accept="image/*" onchange="displayImage(event),displayImage1(event)" multiple>
+        <label for="comment">Enter Comments </label>
+        <input type="text" id="comment" name="comment">
+        <div type="submit" id="submit" onmouseover="showComment()">Submit</div>
+    </form>
+    
+
+    <div class="main">
+        <p id="main1"></p>
+        </div>
+        <div id="image">
+            <p id="showComment"></p>
+<img src="#" alt="Uploaded Image" id="img">
+<img src="#" alt="Uploaded Image" id="img1">
+
+        </div>
+    <script src="./script.js"></script>
+</body>
+</html>
