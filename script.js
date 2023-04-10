@@ -2,7 +2,7 @@ var button = document.getElementById('btn');
 var para = document.getElementById('main1');
 var j = 0;
 para.innerHTML = j;
-button.addEventListener('mouseover', function () {
+button.addEventListener('click', function () {
     j = j + 1;
 
     para.innerHTML = j;
