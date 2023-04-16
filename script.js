@@ -36,3 +36,48 @@ function showComment() {
     var commentValue = comment.value;
     commentBox.innerHTML = commentValue;
 }
+
+
+var row = document.querySelector(".row");
+		var isDragging = false;
+		var startPosition = 0;
+		var currentTranslate = 0;
+		var prevTranslate = 0;
+
+		row.addEventListener("mousedown", dragStart);
+		row.addEventListener("touchstart", dragStart);
+		row.addEventListener("mouseup", dragEnd);
+		row.addEventListener("touchend", dragEnd);
+		row.addEventListener("mousemove", drag);
+		row.addEventListener("touchmove", drag);
+
+		function dragStart(event) {
+			if (event.type === "touchstart") {
+				startPosition = event.touches[0].clientX;
+			} else {
+				startPosition = event.clientX;
+			}
+			isDragging = true;
+		}
+
+		function dragEnd(event) {
+			if (event.type === "touchend") {
+				currentTranslate = prevTranslate + event.changedTouches[0].clientX - startPosition;
+			} else {
+				currentTranslate = prevTranslate + event.clientX - startPosition;
+			}
+			isDragging = false;
+			prevTranslate = currentTranslate;
+		}
+
+		function drag(event) {
+			if (isDragging) {
+				event.preventDefault();
+				if (event.type === "touchmove") {
+					currentTranslate = prevTranslate + event.touches[0].clientX - startPosition;
+				} else {
+					currentTranslate = prevTranslate + event.clientX - startPosition;
+				}
+				row.style.transform = "translateX(" + currentTranslate + "px)";
+			}
+		}
