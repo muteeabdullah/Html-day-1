@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,42 @@
     <title>Document</title>
     <link rel="stylesheet" href="/new.css">
 </head>
+<head>
+    <style>
+        body {
+            background-color: #181717;
+        }
+    </style>
+</head>
+
 <body>
     <div class="toolbar">
         <button id="btn">Button</button>
         <h1 class="tollbar">toolbar</h1>
     </div>
-    <form>
+    <form class="choosefile">
         <label for="uplaod">Upload your Images here</label>
-        <input type="file" id="input" name="upload" accept="image/*" onchange="displayImage(event),displayImage1(event)" multiple>
+        <input type="file" id="input" name="upload" accept="image/*" onchange="displayImage(event),displayImage1(event)"
+            multiple>
         <label for="comment">Enter Comments </label>
         <input type="text" id="comment" name="comment">
         <div type="submit" id="submit" onclick="showComment()">Submit</div>
     </form>
-    
+
 
     <div class="main">
         <p id="main1"></p>
+    </div>
+    <div id="image">
+        <p id="showComment"></p>
+        <div class="imagecontainer">
+            <img src="#" alt="Uploaded Image" id="img">
         </div>
-        <div id="image">
-            <p id="showComment"></p>
-<img src="#" alt="Uploaded Image" id="img">
-<img src="#" alt="Uploaded Image" id="img1">
+        <div class="imagecontainer"><img src="#" alt="Uploaded Image" id="img1">
+        </div>
 
-        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
+
 </html>

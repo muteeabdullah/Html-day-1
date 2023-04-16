@@ -8,6 +8,7 @@ button.addEventListener('click', function () {
     para.innerHTML = j;
 
 });
+
 var input = document.getElementById('input');
 var image = document.getElementById('img');
 var image1 = document.getElementById('img1');
